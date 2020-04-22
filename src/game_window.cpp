@@ -12,29 +12,10 @@ game_window::game_window(QWidget *parent) :
 {
     ui->setupUi(this);
     scene = new QGraphicsScene(this);
+    scene->setSceneRect(0, 0, 250, 250); //this hold the demesion of the scene. Fix this to fix area eventually.
 
     ui->graphicsView->setScene(scene);
 
-    QPen pen = QPen(Qt::red);
-    QBrush brush = QBrush(Qt::blue);
-    pen.setWidth(2);
-
-    QGraphicsRectItem *rect;
-
-
-    rect = scene->addRect(10, 10, 100,100, pen, brush);
-
-    QTimeLine *timer = new QTimeLine(5000);
-     timer->setFrameRange(0, 100);
-
-     QGraphicsItemAnimation *animation = new QGraphicsItemAnimation;
-     animation->setItem(rect);
-     animation->setTimeLine(timer);
-
-     for (int i = 0; i < 200; ++i)
-         animation->setPosAt(i / 200.0, QPointF(i, i));
-
-     timer->start();
 }
 
 game_window::~game_window()

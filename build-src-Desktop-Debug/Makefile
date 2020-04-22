@@ -51,9 +51,13 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../src/main.cpp \
-		../src/game_window.cpp moc_game_window.cpp
+		../src/game_window.cpp \
+		../src/obstacle.cpp \
+		../src/player.cpp moc_game_window.cpp
 OBJECTS       = main.o \
 		game_window.o \
+		obstacle.o \
+		player.o \
 		moc_game_window.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -114,6 +118,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../src/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -133,8 +138,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../src/src.pro ../src/game_window.h ../src/main.cpp \
-		../src/game_window.cpp
+		../src/src.pro ../src/game_window.h \
+		../src/obstacle.h \
+		../src/player.h ../src/main.cpp \
+		../src/game_window.cpp \
+		../src/obstacle.cpp \
+		../src/player.cpp
 QMAKE_TARGET  = src
 DESTDIR       = 
 TARGET        = src
@@ -205,6 +214,7 @@ Makefile: ../src/src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -288,6 +298,7 @@ Makefile: ../src/src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -326,8 +337,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/game_window.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/main.cpp ../src/game_window.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/game_window.h ../src/obstacle.h ../src/player.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/main.cpp ../src/game_window.cpp ../src/obstacle.cpp ../src/player.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/game_window.ui $(DISTDIR)/
 
 
@@ -393,6 +404,12 @@ main.o: ../src/main.cpp ../src/game_window.h
 game_window.o: ../src/game_window.cpp ../src/game_window.h \
 		ui_game_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o game_window.o ../src/game_window.cpp
+
+obstacle.o: ../src/obstacle.cpp ../src/obstacle.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obstacle.o ../src/obstacle.cpp
+
+player.o: ../src/player.cpp ../src/player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../src/player.cpp
 
 moc_game_window.o: moc_game_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_game_window.o moc_game_window.cpp
