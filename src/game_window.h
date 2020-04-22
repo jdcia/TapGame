@@ -2,11 +2,26 @@
 #define GAME_WINDOW_H
 
 #include <QMainWindow>
+#include <QtCore>
+#include <QGraphicsScene>
 
-class game_window
+namespace Ui {
+class game_window;
+}
+
+class game_window : public QMainWindow
 {
+    Q_OBJECT
+
 public:
-    game_window();
+    explicit game_window(QWidget *parent = 0);
+    ~game_window();
+
+private:
+    Ui::game_window *ui;
+
+    QGraphicsScene *scene;
+
 };
 
 #endif // GAME_WINDOW_H

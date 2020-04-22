@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2020-04-20T05:04:24
+# Project created by QtCreator 2020-04-22T10:54:35
 #
 #-------------------------------------------------
 
@@ -25,12 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    game_window.cpp
+        game_window.cpp \
+    obstacle.cpp \
+    player.cpp
 
 HEADERS += \
-        mainwindow.h \
-    game_window.h
+        game_window.h \
+    obstacle.h \
+    player.h
 
 FORMS += \
-        mainwindow.ui
+        game_window.ui
