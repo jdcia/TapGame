@@ -17,10 +17,17 @@ public:
     explicit game_window(QWidget *parent = 0);
     ~game_window();
 
+    void start();
+
 private:
     Ui::game_window *ui;
 
     QGraphicsScene *scene;
+
+};
+
+struct object_unit{
+    //This will hold the object data for one unit of obstacles.
 
 };
 

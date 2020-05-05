@@ -1,5 +1,5 @@
-#ifndef OBSTACLE_H
-#define OBSTACLE_H
+#ifndef OBSTACLE_CONTROL_H
+#define OBSTACLE_CONTROL_H
 #include <QPen>
 #include <QBrush>
 #include <QGraphicsRectItem>
@@ -8,7 +8,7 @@
 
 
 
-class obstacle
+class obstacle_control
 {
 public:
 
@@ -17,11 +17,14 @@ public:
     QGraphicsScene * parent_scene;
 
     //functions
-    obstacle(QGraphicsScene * scene);
+    obstacle_control(QGraphicsScene * scene, double w, double h;
     void create_objects();
     void link_animation();
+
+    double width; //this is the total width of the screen.
+    double hieght; //this is the total hieght on the screen.
 
 
 };
 
-#endif // OBSTACLE_H
+#endif // OBSTACLE_CONTROL_H

@@ -1,9 +1,39 @@
-#include "obstacle.h"
+/*
+ *
+ *This class will control the flow of obstacles.
+ *
+ *
+ */
 
-obstacle::obstacle(QGraphicsScene * scene)
+
+
+
+#include "obstacle_control.h"
+obstacle_control::obstacle_control(QGraphicsScene * scene, double w, double h)
 {
     parent_scene = scene; //this way we have the scene.
 
+    width = w;
+    hieght = h;
+
+}
+
+
+/*
+ * This will create 2 obstacles and save them in the obstacles_unit structure.
+ */
+
+void obstacle_control::create_objects(){
+    //this will create the objects used from the scene
+
+    //for this game mode we only need 2 objects that move to the left and off the screen.
+
+
+
+}
+
+void obstacle_control::link_animation(){
+    //here we will create an animation for the object
 }
 
 //REFERENCE CODE--------------------------------------------------------------------------
@@ -40,14 +70,6 @@ obstacle::obstacle(QGraphicsScene * scene)
 
 //-----------------------------------------------------------------------------------
 
-void obstacle::create_objects(){
-    //this will create the objects used from the scene
 
 
-
-
-}
-
-void obstacle::link_animation(){
-    //here we will create an animation for the object
-}
+void start();

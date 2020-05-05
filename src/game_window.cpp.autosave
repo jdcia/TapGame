@@ -30,7 +30,11 @@ game_window::~game_window()
 
 void game_window::start(){
     //start game.
-
+    
+    
+    
+    
+    
 
 
 }
