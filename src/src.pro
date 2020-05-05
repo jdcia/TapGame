@@ -27,13 +27,13 @@ SOURCES += \
         main.cpp \
         game_window.cpp \
     mainwindow.cpp \
-    obstacle_control.cpp \
+    obstacle_unit.cpp \
     player.cpp
 
 HEADERS += \
         game_window.h \
     mainwindow.h \
-    obstacle_control.h \
+    obstacle_unit.h \
     player.h
 
 FORMS += \

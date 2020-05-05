@@ -26,9 +26,6 @@ private:
 
 };
 
-struct object_unit{
-    //This will hold the object data for one unit of obstacles.
 
-};
 
 #endif // GAME_WINDOW_H
