@@ -6,8 +6,6 @@
  */
 
 
-
-
 #include "obstacle_unit.h"
 /*
  * This will create 2 obstacles and save them in the obstacles_unit structure.
@@ -21,10 +19,10 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
     QPen pen = QPen(Qt::red);
     QBrush brush = QBrush(Qt::blue);
 
-    QGraphicsRectItem *rect1 = scene->addRect(250, 150, 50,100, pen, brush); //fix starting position
-    QGraphicsRectItem *rect2 = scene->addRect(250, 50, 50,100, pen, brush); //fix starting position
+    //eventually randomize hieght
 
-
+    QGraphicsRectItem *rect1 = scene->addRect(scene->width() + 100, 150, 50,50, pen, brush); //fix starting position
+    QGraphicsRectItem *rect2 = scene->addRect(scene->width() + 100, 50, 50,50, pen, brush); //fix starting position
 
 
 
@@ -37,14 +35,14 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
     animation1->setItem(rect1);
     animation2->setItem(rect2);
     animation1->setTimeLine(timer);
-    animation1->setTimeLine(timer);
+    animation2->setTimeLine(timer);
 
 
     int start = 0;
 
 
     //create the animations
-     while(start < scene->width() + 100){
+     while(start < scene->width() + 250){
 
          animation1->setPosAt(1, QPointF(-start, 0));
          animation2->setPosAt(1, QPointF(-start, 0));

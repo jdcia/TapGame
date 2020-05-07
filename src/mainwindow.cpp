@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "game_window.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,8 @@ MainWindow::~MainWindow()
 //game mode 1 will involve two obstacles.
 void MainWindow::on_game_mode1_clicked()
 {
-
+    game1.show();
+    game1.start();
 }
 
 

@@ -1,5 +1,6 @@
 #include "game_window.h"
 #include "ui_game_window.h"
+#include "obstacle_unit.h"
 
 #include <QPen>
 #include <QBrush>
@@ -31,7 +32,10 @@ game_window::~game_window()
 void game_window::start(){
     //start game.
 
+    obstacle_unit *obs = new obstacle_unit(scene);
 
+   // while(true)
+    obs->start();
 
 
 

@@ -33,16 +33,16 @@ public:
     {
         if (game_window->objectName().isEmpty())
             game_window->setObjectName(QString::fromUtf8("game_window"));
-        game_window->resize(400, 300);
+        game_window->resize(341, 546);
         centralWidget = new QWidget(game_window);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         graphicsView = new QGraphicsView(centralWidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(0, 0, 401, 231));
+        graphicsView->setGeometry(QRect(0, 0, 341, 491));
         game_window->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(game_window);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 30));
+        menuBar->setGeometry(QRect(0, 0, 341, 21));
         game_window->setMenuBar(menuBar);
         mainToolBar = new QToolBar(game_window);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
