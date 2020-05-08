@@ -24,6 +24,9 @@ private:
 
     QGraphicsScene *scene;
 
+public slots:
+    void checkpoint_notif();
+
 };
 
 

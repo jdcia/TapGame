@@ -11,8 +11,10 @@
 
 
 
-class obstacle_unit
+class obstacle_unit : public QObject
 {
+    Q_OBJECT
+
 public:
 
     //variables
@@ -29,6 +31,9 @@ public:
     //functions
     obstacle_unit(QGraphicsScene * scene);
     void start();
+
+signals:
+    void send_checkpoint();
 
 };
 

@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'game_window.h'
+** Meta object code from reading C++ file 'obstacle_unit.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../src/game_window.h"
+#include "../../src/obstacle_unit.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'game_window.h' doesn't include <QObject>."
+#error "The header file 'obstacle_unit.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,27 +21,27 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_game_window_t {
+struct qt_meta_stringdata_obstacle_unit_t {
     QByteArrayData data[3];
-    char stringdata0[30];
+    char stringdata0[31];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_game_window_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_obstacle_unit_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_game_window_t qt_meta_stringdata_game_window = {
+static const qt_meta_stringdata_obstacle_unit_t qt_meta_stringdata_obstacle_unit = {
     {
-QT_MOC_LITERAL(0, 0, 11), // "game_window"
-QT_MOC_LITERAL(1, 12, 16), // "checkpoint_notif"
-QT_MOC_LITERAL(2, 29, 0) // ""
+QT_MOC_LITERAL(0, 0, 13), // "obstacle_unit"
+QT_MOC_LITERAL(1, 14, 15), // "send_checkpoint"
+QT_MOC_LITERAL(2, 30, 0) // ""
 
     },
-    "game_window\0checkpoint_notif\0"
+    "obstacle_unit\0send_checkpoint\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_game_window[] = {
+static const uint qt_meta_data_obstacle_unit[] = {
 
  // content:
        8,       // revision
@@ -52,56 +52,65 @@ static const uint qt_meta_data_game_window[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   19,    2, 0x06 /* Public */,
 
- // slots: parameters
+ // signals: parameters
     QMetaType::Void,
 
        0        // eod
 };
 
-void game_window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void obstacle_unit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<game_window *>(_o);
+        auto *_t = static_cast<obstacle_unit *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->checkpoint_notif(); break;
+        case 0: _t->send_checkpoint(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (obstacle_unit::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&obstacle_unit::send_checkpoint)) {
+                *result = 0;
+                return;
+            }
         }
     }
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject game_window::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_game_window.data,
-    qt_meta_data_game_window,
+QT_INIT_METAOBJECT const QMetaObject obstacle_unit::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_obstacle_unit.data,
+    qt_meta_data_obstacle_unit,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *game_window::metaObject() const
+const QMetaObject *obstacle_unit::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *game_window::qt_metacast(const char *_clname)
+void *obstacle_unit::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_game_window.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_obstacle_unit.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return QObject::qt_metacast(_clname);
 }
 
-int game_window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int obstacle_unit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -114,6 +123,12 @@ int game_window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     }
     return _id;
+}
+
+// SIGNAL 0
+void obstacle_unit::send_checkpoint()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

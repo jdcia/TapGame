@@ -7,6 +7,7 @@
 
 
 #include "obstacle_unit.h"
+#include <iostream>
 /*
  * This will create 2 obstacles and save them in the obstacles_unit structure.
  */
@@ -40,13 +41,11 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
 
     int start = 0;
 
-
     //create the animations
      while(start < scene->width() + 250){
 
          animation1->setPosAt(1, QPointF(-start, 0));
          animation2->setPosAt(1, QPointF(-start, 0));
-
          start++;
      }
 
@@ -54,6 +53,7 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
 }
 void obstacle_unit::start()
 {
+        emit send_checkpoint();
         timer->start();
 }
 
