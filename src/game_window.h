@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtCore>
 #include <QGraphicsScene>
+#include <windows.h>
 
 namespace Ui {
 class game_window;
@@ -24,8 +25,6 @@ private:
 
     QGraphicsScene *scene;
 
-public slots:
-    void checkpoint_notif();
 
 };
 

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_obstacle_unit_t {
-    QByteArrayData data[3];
-    char stringdata0[31];
+    QByteArrayData data[4];
+    char stringdata0[37];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,12 @@ struct qt_meta_stringdata_obstacle_unit_t {
 static const qt_meta_stringdata_obstacle_unit_t qt_meta_stringdata_obstacle_unit = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "obstacle_unit"
-QT_MOC_LITERAL(1, 14, 15), // "send_checkpoint"
-QT_MOC_LITERAL(2, 30, 0) // ""
+QT_MOC_LITERAL(1, 14, 15), // "start_animation"
+QT_MOC_LITERAL(2, 30, 0), // ""
+QT_MOC_LITERAL(3, 31, 5) // "state"
 
     },
-    "obstacle_unit\0send_checkpoint\0"
+    "obstacle_unit\0start_animation\0\0state"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,13 +53,13 @@ static const uint qt_meta_data_obstacle_unit[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       0,       // signalCount
 
- // signals: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x06 /* Public */,
+ // slots: name, argc, parameters, tag, flags
+       1,    1,   19,    2, 0x0a /* Public */,
 
- // signals: parameters
-    QMetaType::Void,
+ // slots: parameters
+    QMetaType::Void, QMetaType::QReal,    3,
 
        0        // eod
 };
@@ -69,20 +70,10 @@ void obstacle_unit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<obstacle_unit *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->send_checkpoint(); break;
+        case 0: _t->start_animation((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         default: ;
         }
-    } else if (_c == QMetaObject::IndexOfMethod) {
-        int *result = reinterpret_cast<int *>(_a[0]);
-        {
-            using _t = void (obstacle_unit::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&obstacle_unit::send_checkpoint)) {
-                *result = 0;
-                return;
-            }
-        }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject obstacle_unit::staticMetaObject = { {
@@ -123,12 +114,6 @@ int obstacle_unit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     }
     return _id;
-}
-
-// SIGNAL 0
-void obstacle_unit::send_checkpoint()
-{
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

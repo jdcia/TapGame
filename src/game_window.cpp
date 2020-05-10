@@ -32,13 +32,9 @@ game_window::~game_window()
 void game_window::start(){
     //start game.
 
-    checkpoint_notif();
+    obstacle_unit obs;
+    obs.setup(scene);
+    obs.start();
 
 }
 
-void game_window::checkpoint_notif(){
-
-    obstacle_unit *obs = new obstacle_unit(scene);
-    connect(obs, &obstacle_unit::send_checkpoint, this, &game_window::checkpoint_notif);
-    obs->start();
-}

@@ -8,14 +8,21 @@
 
 #include "obstacle_unit.h"
 #include <iostream>
+#include <QPropertyAnimation>
 /*
  * This will create 2 obstacles and save them in the obstacles_unit structure.
  */
 
-obstacle_unit::obstacle_unit(QGraphicsScene * scene){
 
+obstacle_unit::obstacle_unit(QObject *par) : QObject(par){
+    parent = par;
+
+}
+
+void obstacle_unit::setup(QGraphicsScene *scene){
     parent_scene = scene;
-    timer = new QTimeLine(5000);
+    timer = new QTimeLine(4000, parent);
+    timer->setFrameRange(0,100);
 
     QPen pen = QPen(Qt::red);
     QBrush brush = QBrush(Qt::blue);
@@ -24,7 +31,6 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
 
     QGraphicsRectItem *rect1 = scene->addRect(scene->width() + 100, 150, 50,50, pen, brush); //fix starting position
     QGraphicsRectItem *rect2 = scene->addRect(scene->width() + 100, 50, 50,50, pen, brush); //fix starting position
-
 
 
     //create animations for objects.
@@ -44,60 +50,23 @@ obstacle_unit::obstacle_unit(QGraphicsScene * scene){
     //create the animations
      while(start < scene->width() + 250){
 
+
          animation1->setPosAt(1, QPointF(-start, 0));
          animation2->setPosAt(1, QPointF(-start, 0));
          start++;
      }
 
-
+     timer->setLoopCount(0);
 }
 void obstacle_unit::start()
 {
-        emit send_checkpoint();
-        timer->start();
+    std::cout << "swag" << "\n";
+    connect(timer, SIGNAL(valueChanged(qreal)), this, SLOT(start_animation(qreal)));        //timer->start();
+    timer->start();
+
 }
+void obstacle_unit::start_animation(qreal state){
+    std::cout << "yoolo" << "\n";
 
-//REFERENCE CODE--------------------------------------------------------------------------
-
-//QPen pen = QPen(Qt::red);
-//QBrush brush = QBrush(Qt::blue);
-//pen.setWidth(2);
-
-//QGraphicsRectItem *rect;
-
-
-//rect = scene->addRect(250, 50, 50,100, pen, brush);
-
-//QTimeLine *timer = new QTimeLine(5000);
-// timer->setFrameRange(0, 100);
-
-// QGraphicsItemAnimation *animation = new QGraphicsItemAnimation;
-// animation->setItem(rect);
-// animation->setTimeLine(timer);
-
-
-//int start = 0;
-
-// while(start < scene->width() + 100){
-
-//     animation->setPosAt(1, QPointF(-start, 0));
-//     animation->
-
-//     start++;
-// }
-
-
-// timer->start();
-
-//-----------------------------------------------------------------------------------
-
-
-
-
-
-
-
-//--------------------------------obstacle unit----------------------------------------------------------------------------------
-
-
-
+    std::cout << state << "in start \n";
+}

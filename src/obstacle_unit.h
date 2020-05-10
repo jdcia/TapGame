@@ -8,6 +8,7 @@
 #include <QParallelAnimationGroup>
 #include <qtimeline.h>
 #include <QPropertyAnimation>
+#include <QObject>
 
 
 
@@ -18,7 +19,7 @@ class obstacle_unit : public QObject
 public:
 
     //variables
-
+    QObject *parent;
     QGraphicsScene * parent_scene;
 
     QGraphicsRectItem *rect1;
@@ -29,11 +30,13 @@ public:
     QTimeLine *timer; //may move to game_window class and take in as param from constructor
 
     //functions
-    obstacle_unit(QGraphicsScene * scene);
+    obstacle_unit(QObject *par = 0);
+    void setup(QGraphicsScene *scene);
     void start();
 
+public slots:
+    void start_animation(qreal state);
 signals:
-    void send_checkpoint();
 
 };
 

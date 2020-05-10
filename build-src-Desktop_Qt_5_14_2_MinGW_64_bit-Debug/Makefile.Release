@@ -711,6 +711,7 @@ release/moc_obstacle_unit.cpp: ../src/obstacle_unit.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/QPropertyAnimation \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/qpropertyanimation.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QObject \
 		release/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/Jacob Garcia/Documents/GitHub/TapGame/build-src-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -I"C:/Users/Jacob Garcia/Documents/GitHub/TapGame/src" -IC:/Qt/5.14.2/mingw73_64/include -IC:/Qt/5.14.2/mingw73_64/include/QtWidgets -IC:/Qt/5.14.2/mingw73_64/include/QtGui -IC:/Qt/5.14.2/mingw73_64/include/QtANGLE -IC:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\obstacle_unit.h -o release\moc_obstacle_unit.cpp
@@ -1623,7 +1624,8 @@ release/obstacle_unit.o: ../src/obstacle_unit.cpp ../src/obstacle_unit.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/QPropertyAnimation \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/qpropertyanimation.h \
-		C:/Qt/5.14.2/mingw73_64/include/QtCore/qvariantanimation.h
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\obstacle_unit.o ..\src\obstacle_unit.cpp
 
 release/player.o: ../src/player.cpp ../src/player.h
